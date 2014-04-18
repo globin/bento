@@ -33,7 +33,7 @@
       "iso_checksum": "33eb2ad62940aabe99f776f3c35ce90eaad6e2d2",
       "iso_checksum_type": "sha1",
       "iso_url": "{{user `mirror`}}/14.04/ubuntu-14.04-server-i386.iso",
-      "output_directory": "packer-ubuntu-14.04-i386-virtualbox",
+      "output_directory": "packer-ubuntu-14.04-i386-puppet-virtualbox",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -55,7 +55,7 @@
         ]
       ],
       "virtualbox_version_file": ".vbox_version",
-      "vm_name": "packer-ubuntu-14.04-i386"
+      "vm_name": "packer-ubuntu-14.04-i386-puppet"
     },
     {
       "boot_command": [
@@ -89,7 +89,7 @@
       "iso_checksum": "33eb2ad62940aabe99f776f3c35ce90eaad6e2d2",
       "iso_checksum_type": "sha1",
       "iso_url": "{{user `mirror`}}/14.04/ubuntu-14.04-server-i386.iso",
-      "output_directory": "packer-ubuntu-14.04-i386-vmware",
+      "output_directory": "packer-ubuntu-14.04-i386-puppet-vmware",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -97,7 +97,7 @@
       "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "linux",
       "type": "vmware-iso",
-      "vm_name": "packer-ubuntu-14.04-i386",
+      "vm_name": "packer-ubuntu-14.04-i386-puppet",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "memsize": "384",
@@ -107,7 +107,7 @@
   ],
   "post-processors": [
     {
-      "output": "../builds/{{.Provider}}/opscode_ubuntu-14.04-i386_chef-{{user `chef_version`}}.box",
+      "output": "../builds/{{.Provider}}/ubuntu-14.04-i386_puppet.box",
       "type": "vagrant"
     }
   ],
@@ -129,7 +129,7 @@
         "scripts/ubuntu/sudoers.sh",
         "scripts/common/vagrant.sh",
         "scripts/common/vmtools.sh",
-        "scripts/common/chef.sh",
+        "scripts/common/puppet.sh",
         "scripts/ubuntu/cleanup.sh",
         "scripts/common/minimize.sh"
       ],
