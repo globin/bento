@@ -15,6 +15,9 @@ dpkg -i /tmp/puppetlabs-release-${CODENAME}.deb
 apt-get update
 apt-get install -y puppet facter
 
+# enable puppet agent
+puppet agent --enable
+
 # cleanup
 rm /tmp/puppetlabs-release-${CODENAME}.deb
 rm /tmp/puppetlabs-pubkey.gpg
