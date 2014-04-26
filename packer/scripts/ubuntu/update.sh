@@ -1,5 +1,8 @@
 #!/bin/bash -eux
 
+# use mirror:// with a mirror list to select mirror based on location
+sed -i 's/http:\/\/us.archive.ubuntu.com\/ubuntu\//mirror:\/\/mirrors.ubuntu.com\/mirrors.txt/g' /etc/apt/sources.list
+
 apt-get update
 apt-get -y upgrade
 
