@@ -7,6 +7,9 @@ if [[ "$UBUNTU_VERSION" == '12.04' ]]; then
   rm -rf /var/lib/apt/lists
 fi
 
+# use mirror:// with a mirror list to select mirror based on location
+sed -i 's/http:\/\/us.archive.ubuntu.com\/ubuntu\//mirror:\/\/mirrors.ubuntu.com\/mirrors.txt/g' /etc/apt/sources.list
+
 # Update the package list
 apt-get update
 
