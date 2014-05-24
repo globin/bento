@@ -93,6 +93,7 @@
         "scripts/sles/puppet.sh",
         "scripts/sles/remove-dvd-source.sh",
         "scripts/sles/no-nic-persistence.sh",
+        "scripts/sles/grub-speedup.sh",
         "scripts/common/minimize.sh"
       ],
       "type": "shell"
