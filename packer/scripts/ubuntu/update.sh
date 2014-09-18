@@ -8,7 +8,7 @@ if [[ "$UBUNTU_VERSION" == '12.04' ]]; then
 fi
 
 # use mirror:// with a mirror list to select mirror based on location
-sed -i 's/http:\/\/us.archive.ubuntu.com\/ubuntu\//mirror:\/\/mirrors.ubuntu.com\/mirrors.txt/g' /etc/apt/sources.list
+sed -i 's|http://us.archive.ubuntu.com/ubuntu/|http://de.archive.ubuntu.com/ubuntu/|g' /etc/apt/sources.list
 
 # Update the package list
 apt-get update
