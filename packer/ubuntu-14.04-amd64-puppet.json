@@ -134,7 +134,7 @@
     }
   ],
   "variables": {
-    "puppet_version": "3.4.3-1",
+    "puppet_version": "3.7.1-1puppetlabs1",
     "mirror": "http://releases.ubuntu.com"
   }
 }
